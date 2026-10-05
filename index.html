@@ -32,14 +32,6 @@
   "knowsAbout":["हिंदू पंचांग","शुभ मुहूर्त","पंचक","वैदिक कर्मकांड","पौराणिक कर्मकांड","पूजा पाठ"]
 }
 </script>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-V7GT9PEJ6Q"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-gtag('config', 'G-V7GT9PEJ6Q');
-  </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -117,6 +109,63 @@ nav{
 }
 nav a{color:#ffe59b;text-decoration:none;padding:5px 10px;font-size:14px;font-weight:700}
 @media(max-width:520px){nav a{font-size:12px;padding:4px 6px}.card{padding:28px 15px}.phone{font-size:24px!important}}
+
+/* दैनिक पंचांग कार्ड */
+.panchang-live{
+  max-width:900px;margin:auto;padding:26px;
+  border:2px solid var(--gold);border-radius:24px;
+  background:linear-gradient(145deg,#5a0a03,#240400);
+  box-shadow:0 12px 35px #0005,inset 0 0 30px rgba(255,210,90,.06);
+}
+.panchang-head{display:flex;align-items:center;gap:16px;justify-content:center;text-align:left;margin-bottom:24px}
+.panchang-date-icon{
+  width:68px;height:68px;display:flex;align-items:center;justify-content:center;
+  border:2px solid var(--gold);border-radius:18px;color:var(--gold);
+  font-size:35px;font-weight:900;background:#2b0500;
+}
+.panchang-today{font-size:30px;font-weight:900;color:var(--gold);line-height:1.2}
+.panchang-date{font-size:20px;font-weight:800;color:#fff2bd;margin-top:4px}
+.panchang-place{font-size:15px;color:#ffe2a0}
+.panchang-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
+.pbox{
+  padding:15px;border:1px solid #d99b28;border-radius:14px;
+  background:rgba(25,3,0,.42);text-align:center;
+}
+.pbox span,.muhur span{display:block;color:#ffd66b;font-size:14px;font-weight:800}
+.pbox b{display:block;color:#fff8dc;font-size:19px;margin-top:3px}
+.pbox small{display:block;color:#e9c981;font-size:13px;margin-top:3px}
+.panchang-subtitle{
+  text-align:center;color:var(--gold);font-size:21px;font-weight:900;
+  margin:26px 0 10px;padding-top:15px;border-top:1px solid #9f6b18;
+}
+.muhurat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.muhur{padding:13px;border-radius:14px;text-align:center;border:1px solid #b98628}
+.muhur b{display:block;font-size:17px;color:#fff}
+.muhur.good{background:rgba(70,75,10,.25)}
+.muhur.bad{background:rgba(100,10,5,.35)}
+.panchang-note{
+  margin-top:22px;padding:15px;border-radius:14px;
+  background:#210500;border:1px solid #a87520;color:#ffe8ad;text-align:center;
+}
+@media(max-width:650px){
+  .panchang-live{padding:18px 12px}
+  .panchang-head{gap:10px}
+  .panchang-date-icon{width:55px;height:55px;font-size:28px}
+  .panchang-today{font-size:23px}
+  .panchang-date{font-size:17px}
+  .panchang-grid,.muhurat-grid{grid-template-columns:repeat(2,1fr)}
+  .pbox b{font-size:16px}
+  .pbox small{font-size:12px}
+  .muhur b{font-size:15px}
+}
+
+
+/* Panchang poster image */
+.panchang-image-card{max-width:900px;margin:24px auto 0;padding:18px;border-radius:24px;background:rgba(255,255,255,.08);border:1px solid rgba(255,214,107,.35);box-shadow:0 12px 35px rgba(0,0,0,.22);text-align:center}
+.panchang-image-title{font-size:25px;font-weight:900;color:#ffd66b;margin-bottom:14px}
+.panchang-image-card img{display:block;width:100%;height:auto;max-height:none;border-radius:16px;object-fit:contain;background:#fff}
+.panchang-image-note{margin:12px 0 0;color:#ffe9ae;font-size:14px}
+@media(max-width:600px){.panchang-image-card{padding:10px;border-radius:18px}.panchang-image-title{font-size:21px}}
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-V7GT9PEJ6Q"></script>
@@ -177,15 +226,17 @@ nav a{color:#ffe59b;text-decoration:none;padding:5px 10px;font-size:14px;font-we
 
 <section id="panchang">
 <div class="wrap">
-<div class="title"><h2>दैनिक पंचांग</h2><p>महू (जिला इंदौर, मध्यप्रदेश) आधारित</p></div>
-<div class="panchang">
-<p style="font-size:28px;color:#ffd66b;font-weight:900">📅 आज का विस्तृत पंचांग</p>
-<p>तिथि • वार • नक्षत्र • योग • करण</p>
-<p>सूर्योदय • सूर्यास्त • चौघड़िया • अभिजीत मुहूर्त</p>
-<p>शुभ-अशुभ मुहूर्त • पंचक • भद्रा • अग्नि वास • शिव वास</p>
-<p style="margin-top:15px;color:#ffe9ae">यह भाग प्रतिदिन के पंचांग पोस्टर के साथ अपडेट किया जा सकता है।</p>
-<a class="btn" href="#contact" style="margin-top:18px">पंचांग के लिए संपर्क करें</a>
+<div class="title">
+<h2>दैनिक पंचांग</h2>
+<p>महू (जिला इंदौर, मध्यप्रदेश) आधारित</p>
 </div>
+
+<div class="panchang-image-card">
+  <div class="panchang-image-title">🙏 आज का पंचांग</div>
+  <img id="panchangImage" src="panchang.jpg" alt="आज का पंचांग — महू (इंदौर)" loading="eager">
+  <p class="panchang-image-note">प्रतिदिन का नया पंचांग पोस्टर इसी स्थान पर दिखाई देगा।</p>
+</div>
+
 </div>
 </section>
 
@@ -216,5 +267,23 @@ nav a{color:#ffe59b;text-decoration:none;padding:5px 10px;font-size:14px;font-we
 <p>श्री शास्त्री ( महू-इंदौर) पंचांग</p>
 </footer>
 
+
+<script>
+/* इस कार्ड में प्रदर्शित गणनाएँ 5 अक्टूबर 2026 की हैं।
+   अगली तारीख का पंचांग डालते समय ऊपर के पंचांग डेटा को भी अपडेट करें। */
+</script>
+
+
+<script>
+(function(){
+  const img=document.getElementById('panchangImage');
+  if(!img) return;
+  const d=new Date();
+  const y=d.getFullYear();
+  const m=String(d.getMonth()+1).padStart(2,'0');
+  const day=String(d.getDate()).padStart(2,'0');
+  img.src='panchang.jpg?v='+y+m+day;
+})();
+</script>
 </body>
 </html>
