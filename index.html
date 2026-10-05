@@ -166,6 +166,14 @@ nav a{color:#ffe59b;text-decoration:none;padding:5px 10px;font-size:14px;font-we
 .panchang-image-card img{display:block;width:100%;height:auto;max-height:none;border-radius:16px;object-fit:contain;background:#fff}
 .panchang-image-note{margin:12px 0 0;color:#ffe9ae;font-size:14px}
 @media(max-width:600px){.panchang-image-card{padding:10px;border-radius:18px}.panchang-image-title{font-size:21px}}
+
+
+/* विशेष सामग्री इमेज */
+.special-image-card{max-width:900px;margin:24px auto 0;padding:18px;border-radius:24px;background:rgba(255,255,255,.08);border:1px solid rgba(255,214,107,.35);box-shadow:0 12px 35px rgba(0,0,0,.22);text-align:center}
+.special-image-title{font-size:25px;font-weight:900;color:#ffd66b;margin-bottom:14px}
+.special-image-card img{display:block;width:100%;height:auto;max-height:none;border-radius:16px;object-fit:contain;background:#fff}
+.special-image-note{margin:12px 0 0;color:#ffe9ae;font-size:14px}
+@media(max-width:600px){.special-image-card{padding:10px;border-radius:18px}.special-image-title{font-size:21px}}
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-V7GT9PEJ6Q"></script>
@@ -240,6 +248,22 @@ nav a{color:#ffe59b;text-decoration:none;padding:5px 10px;font-size:14px;font-we
 </div>
 </section>
 
+<section id="special">
+<div class="wrap">
+<div class="title">
+<h2>विशेष सामग्री</h2>
+<p>धार्मिक जानकारी, कथा, संस्कृत, पूजा-विधि एवं विशेष पोस्टर</p>
+</div>
+
+<div class="special-image-card">
+  <div class="special-image-title">📜 आज की विशेष जानकारी</div>
+  <img id="specialImage" src="special.jpg" alt="विशेष धार्मिक जानकारी" loading="lazy">
+  <p class="special-image-note">नई जानकारी दिखाने के लिए केवल <b>special.jpg</b> इमेज को बदलें।</p>
+</div>
+
+</div>
+</section>
+
 <section id="about">
 <div class="wrap">
 <div class="title"><h2>पंडित जी का परिचय</h2></div>
@@ -283,6 +307,19 @@ nav a{color:#ffe59b;text-decoration:none;padding:5px 10px;font-size:14px;font-we
   const m=String(d.getMonth()+1).padStart(2,'0');
   const day=String(d.getDate()).padStart(2,'0');
   img.src='panchang.jpg?v='+y+m+day;
+})();
+</script>
+
+
+<script>
+(function(){
+  const img=document.getElementById('specialImage');
+  if(!img) return;
+  const d=new Date();
+  const y=d.getFullYear();
+  const m=String(d.getMonth()+1).padStart(2,'0');
+  const day=String(d.getDate()).padStart(2,'0');
+  img.src='special.jpg?v='+y+m+day;
 })();
 </script>
 </body>
